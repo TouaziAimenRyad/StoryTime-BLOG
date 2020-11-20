@@ -2,12 +2,19 @@ import React, { Component } from 'react'
 
 
 class Homebt extends Component {
+
+    onTrigger2=(event)=>{
+        this.props.passInfo2('0');
+        event.preventDefault();
+        console.log('hhbhbhbhb')
+    }
+
     render() {
         return (
-            <div className="home bt container">
+            <button onClick={this.onTrigger2} className="home bt1 container">
                 <p >Home</p>
                 
-            </div>
+            </button>
         )
     }
 }
@@ -15,9 +22,9 @@ class Homebt extends Component {
  class Aboutbt extends Component {
     render() {
         return (
-            <div className="about bt container">
+            <button className="about bt1 container">
                 <p >AboutMe</p>
-            </div>
+            </button>
         )
     }
 }
@@ -26,9 +33,9 @@ class Homebt extends Component {
  class Gallerybt extends Component {
     render() {
         return (
-            <div className="gallery bt container">
+            <button className="gallery bt1 container">
                 <p>Gallery</p>
-            </div>
+            </button>
         )
     }
 }
@@ -37,19 +44,34 @@ class Homebt extends Component {
  class Portfoliobt extends Component {
     render() {
         return (
-            <div  className="portfolio bt container">
+            <button  className="portfolio bt1 container">
                 <p>Portfolio</p>
-            </div>
+            </button>
         )
     }
 }
 
  class Nav extends Component {
+     constructor(props){
+         super(props);
+         this.state={
+             id:null
+         }
+     }
+      passInfo2=(childData)=>{
+          this.setState({id:childData},()=>{ this.props.passInfo(this.state.id)});
+         
+          
+      }
+
+   
+
+
     render() {
         return (
             <div className="nav container-fluid">
                  <Aboutbt></Aboutbt>
-                <Homebt></Homebt>
+                <Homebt passInfo2={this.passInfo2}  ></Homebt>
                 <Gallerybt></Gallerybt>
                 <Portfoliobt></Portfoliobt>
             </div>
