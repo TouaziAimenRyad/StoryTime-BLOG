@@ -2,14 +2,17 @@ import React from 'react'
 import './App.css';
 import Imgzone from './components/Imgzone';
 import Nav from './components/Nav.js'
-import imgLink from './imgs/img.jpg'
+import img1 from './imgs/img.jpg'
+import img2 from './imgs/img1.jpg'
+import img3 from './imgs/img3.PNG'
+import img4 from './imgs/img4.jpg'
 
-
+var imgLink=[img1,img2,img3,img4]
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      data:null
+      data:0
     }
   }
 
@@ -19,13 +22,14 @@ class App extends React.Component {
 
   }
  
+  
  
     
   render(){
   return (
     <div className="App ">
       <Nav passInfo={this.passInfo}></Nav>
-      <Imgzone img={imgLink}></Imgzone>
+      <Imgzone img={imgLink[this.state.data]}></Imgzone>
     </div>
   )}
 }

@@ -16,6 +16,8 @@
 }
 
 .bt1{
+    text-align: center;
+    border: none;
     padding-bottom: 5px;
     padding-top:11px;
     padding-left: 5px;
@@ -25,9 +27,17 @@
     position: absolute;
     height: 100%;
     width:6.7%;
+    outline: none!important;
    
 
 }
+
+.bt1:hover{
+    background-color: #f7b900;
+    box-shadow: 0 12px 16px 0 rgba(216, 126, 8, 0.384), 0 17px 50px 0 rgba(216, 126, 8, 0.384);
+}
+
+
 
 .bt1 p{
     color: #e6e6e6;
@@ -37,6 +47,8 @@
     text-align: center;
     
 }
+
+
 
 .portfolio{
     right: 0%;
