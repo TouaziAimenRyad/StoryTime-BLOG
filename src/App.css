@@ -2,13 +2,13 @@
     font-family: 'oswald';
     src: local('oswald'), url(./fonts/Oswald-VariableFont_wght.ttf) format('truetype');
   }
-.App{
+/*.App{
     width: auto;
     height: auto;
-}
+}*/
 .nav{
     display: block;
-    position: sticky;
+    position: relative;
     background-color: #4d4d4d;
     width: auto;
     height: 50px;
@@ -23,11 +23,13 @@
     padding-left: 5px;
     padding-right: 5px;
     background-color:#666666 ;
-    display: inline;
+    display: block;
     position: absolute;
     height: 100%;
-    width:6.7%;
+    width:6.7%;;
     outline: none!important;
+    margin-left: 0.138px;
+    margin-right: auto;
    
 
 }
@@ -45,6 +47,7 @@
     font-weight: lighter;
     font-size: large;
     text-align: center;
+    width: 100%;
     
 }
 
@@ -63,16 +66,21 @@ right: 6.8%;
 }
 
 .imgzone{
-    position: absolute;
+    position: relative;
+    margin-top: 01%;
+    height: 100px;
     width: 100%;
    
 
 }
 
+
 .imgzone img{
     position: absolute;
-    left: 0%;
-    width: 100%;
+    display: block;
+    top: 30%;
+    left: 37.0%;
+    width: auto;
     height: auto;
 
 }

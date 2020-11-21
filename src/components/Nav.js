@@ -48,7 +48,7 @@ class Homebt extends Component {
     render() {
         return (
             <button onClick={this.onTrigger2} onMouseEnter={this.mouseE} onMouseLeave={this.mouseL} className="about bt1 container">
-                <p id="abouttxt" >AboutMe</p>
+              <p id="abouttxt" >AboutMe</p>
             </button>
         )
     }

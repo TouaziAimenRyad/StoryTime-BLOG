@@ -2,10 +2,11 @@ import React from 'react'
 import './App.css';
 import Imgzone from './components/Imgzone';
 import Nav from './components/Nav.js'
-import img1 from './imgs/img.jpg'
-import img2 from './imgs/img1.jpg'
-import img3 from './imgs/img3.PNG'
-import img4 from './imgs/img4.jpg'
+import img1 from './imgs/story.png'
+import img2 from './imgs/gall.png'
+import img3 from './imgs/port.png'
+import img4 from './imgs/about.png'
+import MainZone from './components/mainzone';
 
 var imgLink=[img1,img2,img3,img4]
 class App extends React.Component {
@@ -30,6 +31,7 @@ class App extends React.Component {
     <div className="App ">
       <Nav passInfo={this.passInfo}></Nav>
       <Imgzone img={imgLink[this.state.data]}></Imgzone>
+      <MainZone zone={this.state.data}></MainZone>
     </div>
   )}
 }
