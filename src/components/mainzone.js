@@ -15,8 +15,10 @@ class AboutZone extends Component {
  class HomeZone extends Component {
     render() {
         return (
-            <div>
-                <BlogLinks></BlogLinks>
+            <div className="grid-container ">
+                <BlogLinks title="titre" content="contenu" className="grid-item"></BlogLinks>
+                <BlogLinks title="titre" content="contenu" className="grid-item"></BlogLinks>
+                <BlogLinks title="titre" content="contenu" className="grid-item"></BlogLinks>
                 
             </div>
         )
@@ -44,13 +46,11 @@ class PortZone extends Component {
     }
 }
 
-
+var zones=[<HomeZone></HomeZone>,<GallZone></GallZone>,<PortZone></PortZone>,<AboutZone></AboutZone>]
 export default class MainZone extends Component {
     render() {
-        return (
-            <div>
-                
-            </div>
+        return(
+            zones[this.props.zone]
         )
     }
 }
