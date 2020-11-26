@@ -2,23 +2,28 @@ import React, { Component } from 'react'
 import '../styles/style.css';
 
 export default class BlogLinks extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      id:this.props.id
+    }
+  }
+  trigger=(event)=>{
+    this.props.passingInfo(this.state.id);
+    event.preventDefault();
+   
+  }
     render() {
         return (
-            <div class="col-sm-4">
-            <div class="card">
-              <div class="image">
-                <img src="http://loremflickr.com/320/150?random=4" alt="img" />
-              </div>
-              <div class="card-inner">
-                <div class="header">
-                 <h2>{this.props.title}</h2>
-              </div>
-              <div class="content">
-                  <p>{this.props.content}</p>
-              </div>
-                </div>
-            </div>
+          <div className="card" style={{width:"18rem"}} >
+          <img src="https://static.toiimg.com/thumb/72975551.cms?width=680height=512imgsize=881753" className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">{this.props.title}</h5>
+        <p className="card-text">{this.props.content}</p>
+            <button  class="btn btn-primary" onClick={this.trigger}>Read more</button>
           </div>
+        </div>
+        
         )
     }
 }

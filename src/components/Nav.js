@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 class Homebt extends Component {
 
     onTrigger2=(event)=>{
-        this.props.passInfo2('0');
+        this.props.passInfo2('0','0');
         event.preventDefault();
     }
 
@@ -31,7 +31,7 @@ class Homebt extends Component {
 
  class Aboutbt extends Component {
     onTrigger2=(event)=>{
-        this.props.passInfo2('3');
+        this.props.passInfo2('3','3');
         event.preventDefault();
     }
 
@@ -57,7 +57,7 @@ class Homebt extends Component {
 
  class Gallerybt extends Component {
     onTrigger2=(event)=>{
-        this.props.passInfo2('1');
+        this.props.passInfo2('1','1');
         event.preventDefault();
     }
 
@@ -84,7 +84,7 @@ class Homebt extends Component {
 
  class Portfoliobt extends Component {
     onTrigger2=(event)=>{
-        this.props.passInfo2('2');
+        this.props.passInfo2('2','2');
         event.preventDefault();
     }
 
@@ -111,11 +111,12 @@ class Homebt extends Component {
      constructor(props){
          super(props);
          this.state={
-             id:null
+             img:null,
+             zone:null
          }
      }
-      passInfo2=(childData)=>{
-          this.setState({id:childData},()=>{ this.props.passInfo(this.state.id)});
+      passInfo2=(img,zone)=>{
+          this.setState({img:img,zone:zone},()=>{ this.props.passInfo(this.state.img,this.state.zone)});
          
           
       }
