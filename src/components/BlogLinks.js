@@ -16,11 +16,11 @@ export default class BlogLinks extends Component {
     render() {
         return (
           <div className="card" style={{width:"18rem"}} >
-          <img src="https://static.toiimg.com/thumb/72975551.cms?width=680height=512imgsize=881753" className="card-img-top" alt="..."></img>
+          <img src="" className="card-img-top" alt="..."></img>
           <div className="card-body">
             <h5 className="card-title">{this.props.title}</h5>
         <p className="card-text">{this.props.content}</p>
-            <button  class="btn btn-primary" onClick={this.trigger}>Read more</button>
+            <button  className="btn btn-primary" onClick={this.trigger}>Read more</button>
           </div>
         </div>
         

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import BlogLinks from './BlogLinks'
-//creating block  links from data base will be hear 
+//creating block  links from data base will be hear  ki takhdam blog links ou thathom fel home zone f nafss el wa9t hat blogs fel zonzmap
+
+
 
 class AboutZone extends Component {
     render() {
@@ -28,9 +30,9 @@ class AboutZone extends Component {
     render() {
         return (
             <div className="grid-container ">
-                <BlogLinks title="titre" content="contenu" picture="" link="" id="4" className="grid-item" passingInfo={this.passinfo3}></BlogLinks>
-                <BlogLinks title="titre" content="contenu" picture="" link="" id="5" className="grid-item" passingInfo={this.passinfo3}></BlogLinks>
-                <BlogLinks title="titre" content="contenu" picture="" link="" id="6" className="grid-item" passingInfo={this.passinfo3}></BlogLinks>
+                <BlogLinks title="titre" content="contenu" picture="" link="" id="55" className="grid-item" passingInfo={this.passinfo3}></BlogLinks>
+                <BlogLinks title="titre" content="contenu" picture="" link="" id="88" className="grid-item" passingInfo={this.passinfo3}></BlogLinks>
+                <BlogLinks title="titre" content="contenu" picture="" link="" id="99" className="grid-item" passingInfo={this.passinfo3}></BlogLinks>
                 
             </div>
         )
@@ -59,11 +61,11 @@ class PortZone extends Component {
 }
 
 
-class Blog extends Component{
-    constructor(props){
+class Blog extends Component{   //apparament the id fel blog mathamach hada how el commentaire lakhar
+    constructor(props){ 
         super(props);
       this.state={
-        id:this.props.id  //the blog and the bloglink on the time of creation they ll havr the same id
+        id:this.props.id  //the blog and the bloglink on the time of creation they ll havr the same id ou dir structure mliha bach taccedi el components taw3k 3la hssab id ta3 zone
 
      }
 }
@@ -89,25 +91,13 @@ export default class MainZone extends Component {
         this.setState({id:childData},()=>{this.props.passingInfo(this.state.id)})
 
     }
+    
+      
     render() {
-        var zones=[<HomeZone passingInfo={this.passinfo4}></HomeZone>,<GallZone></GallZone>,<PortZone></PortZone>,<AboutZone></AboutZone>];
-       // console.log(zones)
-        /*var a=this.props.zone ;
-        var b;
-        switch (a){
-            case 1: b=<GallZone></GallZone>;
-            break;
-            case 2:b=<PortZone></PortZone>;
-            break;
-            case 3:b=<AboutZone></AboutZone>;
-            break;
-            default:b=<HomeZone passingInfo={this.passinfo4}></HomeZone>;
-
-        }*/
-        return(
-          
-        <div>{ zones[this.props.zone]}</div>
-         
+        var zonemap=new Map([   [0,<HomeZone  passingInfo={this.passinfo4}></HomeZone>]  ,  [1,<GallZone></GallZone>]  ,  [2,<PortZone></PortZone>]  ,  [3,<AboutZone></AboutZone>] ,  [parseInt((<Blog id="55" title="bbb" text="jjjj"></Blog>).props.id),<Blog id="55" title="bbb" text="jjjj"></Blog>]  ,   [88,<Blog id="88" title="bjjjbb" text="jjhhhhjj"></Blog>]  , [99,<Blog id="99" title="bjjooojbb" text="jjhhkkkjj"></Blog>] ]);
+       // console.log((<Blog id="5" title="nnnn" text="jjjjj"></Blog>).props) // i can access the props
+       return(
+                 <div>{zonemap.get(parseInt(this.props.zone))}</div>
         )
     }
 }
